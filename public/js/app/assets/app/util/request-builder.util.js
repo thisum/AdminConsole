@@ -1,0 +1,12 @@
+"use strict";
+var http_1 = require("@angular/http");
+/**
+ * Created by Thisum on 8/25/2016.
+ */
+function getHeader() {
+    var token = localStorage.getItem('token');
+    return new http_1.Headers({ 'Content-Type': 'application/json', 'Auth-Token': token });
+}
+exports.getHeader = getHeader;
+
+//# sourceMappingURL=data:application/json;charset=utf8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInV0aWwvcmVxdWVzdC1idWlsZGVyLnV0aWwudHMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IjtBQUFBLHFCQUFzQixlQUFlLENBQUMsQ0FBQTtBQUN0Qzs7R0FFRztBQUVIO0lBRUksSUFBSSxLQUFLLEdBQUcsWUFBWSxDQUFDLE9BQU8sQ0FBQyxPQUFPLENBQUMsQ0FBQztJQUMxQyxNQUFNLENBQUMsSUFBSSxjQUFPLENBQUMsRUFBQyxjQUFjLEVBQUUsa0JBQWtCLEVBQUUsWUFBWSxFQUFFLEtBQUssRUFBQyxDQUFDLENBQUM7QUFDbEYsQ0FBQztBQUplLGlCQUFTLFlBSXhCLENBQUEiLCJmaWxlIjoiYXNzZXRzL2FwcC91dGlsL3JlcXVlc3QtYnVpbGRlci51dGlsLmpzIiwic291cmNlc0NvbnRlbnQiOlsiaW1wb3J0IHtIZWFkZXJzfSBmcm9tIFwiQGFuZ3VsYXIvaHR0cFwiO1xyXG4vKipcclxuICogQ3JlYXRlZCBieSBUaGlzdW0gb24gOC8yNS8yMDE2LlxyXG4gKi9cclxuXHJcbmV4cG9ydCBmdW5jdGlvbiBnZXRIZWFkZXIoKTogSGVhZGVyc3tcclxuXHJcbiAgICB2YXIgdG9rZW4gPSBsb2NhbFN0b3JhZ2UuZ2V0SXRlbSgndG9rZW4nKTtcclxuICAgIHJldHVybiBuZXcgSGVhZGVycyh7J0NvbnRlbnQtVHlwZSc6ICdhcHBsaWNhdGlvbi9qc29uJywgJ0F1dGgtVG9rZW4nOiB0b2tlbn0pO1xyXG59Il19

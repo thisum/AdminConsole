@@ -1,0 +1,73 @@
+
+<div class="container small-text">
+
+    <div class="row">
+        <table class="table borderless sumary-table">
+            <tbody>
+            <tr class="header">
+                <td>Req Type</td>
+                <td>API</td>
+                <td>Req User</td>
+                <td>From Date</td>
+                <td>To Date</td>
+            </tr>
+            <tr class="values">
+                <td>
+                    <select class="form-control-sm" id="reqType" name="reqType" [ngModel]="criteria.reqType" (ngModelChange)="setReqType($event)">
+                        <option *ngFor="let reqType of reqTypes" value={{reqType.code}}>{{reqType.name}}</option>
+                    </select>
+                </td>
+                <td>
+                    <select class="form-control-sm" id="api" name="api" [ngModel]="criteria.api" (ngModelChange)="setApiType($event)">
+                        <option *ngFor="let apiType of apiTypes" value={{apiType.code}}>{{apiType.name}}</option>
+                    </select>
+                </td>
+                <td>
+                    <input class="form-control-sm" type="text" id="reqUser" [(ngModel)]="criteria.reqUser" name="reqUser" #schema="ngModel">
+                </td>
+                <td>
+                    <my-date-picker [options]="datePickerOptions" (dateChanged)="onDateChangedFrom($event)"></my-date-picker>
+                </td>
+                <td>
+                    <my-date-picker [options]="datePickerOptions" (dateChanged)="onDateChangedTo($event)"></my-date-picker>
+                </td>
+                <td>
+                    <button class="btn btn-primary" (click)="onSearch()">Search</button>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="row">
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th class="col-md-1">User</th>
+                    <th class="col-md-3">Image</th>
+                    <th class="col-md-1">Req Type</th>
+                    <th class="col-md-3">Response</th>
+                    <th class="col-md-1">Req Time</th>
+                    <th class="col-md-1">Res Time</th>
+                    <th class="col-md-2">Remarks</th>
+                </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let req of requestInfo">
+                <td class="col-md-1">{{req.user}}</td>
+                <td class="col-md-3"><img id="img" src="data:image/png;base64,{{req.image}}" /></td>
+                <td class="col-md-1">{{req.reqType}}</td>
+                <td class="col-md-3">{{req.response}}</td>
+                <td class="col-md-1">{{req.reqTime}}</td>
+                <td class="col-md-1">{{req.resTime}}</td>
+                <td class="col-md-2">
+                    <p *ngFor="let rem of req._getRemarks()">
+                        <span>{{rem}}</span>
+                    </p>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+</div>

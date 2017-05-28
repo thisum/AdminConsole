@@ -1,0 +1,32 @@
+<div class="row">
+    <form class="form-horizontal" (ngSubmit)="onSubmit()" #usageDetailForm="ngForm">
+
+        <div class="form-group">
+            <label for="service" class="col-sm-2 control-label">Service</label>
+            <div class="col-sm-10">
+                <select  class="form-control"  id="service" name="service" (change)="setSelectedService($event.target.value)" required>
+                    <option *ngFor="let sv of services" value={{sv.service}}>{{sv.service}}</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="type" class="col-sm-2 control-label">Type</label>
+            <div class="col-sm-10">
+                <select  class="form-control"  id="type" [(ngModel)]="paymentSchema.type" name="type" required>
+                    <option *ngFor="let tp of selectedService?.types" value={{tp}}>{{tp}}</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="schema" class="col-sm-2 control-label">Payment Schema</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" id="schema" required
+                       [(ngModel)]="paymentSchema.name" name="schema" #schema="ngModel">
+            </div>
+        </div>
+
+        <button type="submit" class="btn btn-primary" [disabled]="!paymentSchemaForm.form.valid">Add Schema</button>
+    </form>
+</div>

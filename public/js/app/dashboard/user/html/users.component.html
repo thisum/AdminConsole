@@ -1,0 +1,51 @@
+<div class="container">
+
+    <div class="row">
+        <div class="container-fluid">
+            <article class="panel panel-default">
+                <h5><strong><em>Add a new plan</em></strong></h5>
+                <div class="row panel-body">
+                    <div class="col-md-11">
+                        <div class="row">
+                            <div class="col-md-2">Plan</div>
+                            <div class="col-md-2">
+                                <select  class="form-control"  id="plan" name="plan" [(ngModel)]="purchasePlan.plan" required>
+                                    <option *ngFor="let ps of paymentSchemas" value={{ps.name}}>{{ps.name}}</option>
+                                </select>
+                            </div>
+                            <div class="col-md-2">Units</div>
+                            <div class="col-md-2">
+                                <input type="text" [(ngModel)]="purchasePlan.units" id="units" name="units"  />
+                            </div>
+                            <div class="col-md-2 col-md-offset-1"><button type="button" class="btn btn-primary" (click)="onAdd()">Add</button></div>
+                        </div>
+                    </div>
+                </div>
+            </article>
+        </div>
+
+        <div class="container-fluid panel-body">
+            <article class="panel panel-default">
+                <table class="table table-striped">
+                    <thead>
+                    <tr>
+                        <th>User</th>
+                        <th>Plan</th>
+                        <th>Units</th>
+                        <th>Date</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr *ngFor="let plan of purchasePlans">
+                        <td>{{plan.user}}</td>
+                        <td>{{plan.plan}}</td>
+                        <td>{{plan.units}}</td>
+                        <td>{{plan.date}}</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </article>
+        </div>
+    </div>
+
+</div>

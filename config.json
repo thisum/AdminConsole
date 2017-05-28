@@ -1,0 +1,16 @@
+{
+  "db_path": "mongodb://10.19.227.218/FingerReader",
+  "req_types":
+    [
+      { "name": "OCR",            "code": "REQ_TYPE_OCR" },
+      { "name": "Object Detect",  "code": "REQ_TYPE_OBJD" },
+      { "name": "Ask Friend",     "code": "REQ_TYPE_CRWD" }
+    ],
+  "api_types":
+    [
+      {"name": "Google",    "code": "GOOGLE"},
+      {"name": "Microsoft", "code": "MICROSOFT"}
+    ],
+  "operation_mode": "new"
+
+}

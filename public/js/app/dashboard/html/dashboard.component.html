@@ -1,0 +1,14 @@
+<div class="container-fluid">
+    <header class="row spacing">
+        <nav class="navbar navbar-default navbar-static-top">
+                <ul class="nav nav-tabs">
+                    <li><a routerLink="/dashboard/requests" routerLinkActive="active">Requests</a></li>
+                    <li><a routerLink="/dashboard/summary" routerLinkActive="active">Summary</a></li>
+                    <li *ngIf="isAdmin()"><a routerLink="/dashboard/users" routerLinkActive="active">Users</a></li>
+                </ul>
+        </nav>
+    </header>
+</div>
+<router-outlet></router-outlet>
+
+
